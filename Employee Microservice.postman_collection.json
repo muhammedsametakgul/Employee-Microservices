@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "9813ab2a-da52-47b1-8b00-2adf76c9c0ab",
+		"name": "Employee Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28719988"
+	},
+	"item": [
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "Get All Departments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/department"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a department",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"name\" : \"HR\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/department"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Department by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/department/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Create employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1\",\r\n    \"departmentId\" : \"1\",\r\n    \"name\": \"Name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8082/employee"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/employee"
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/employee/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "Get department with employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8060/department/with-employees"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8060/employee"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all departments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8060/department"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
